@@ -12,13 +12,7 @@
 
   var config = {
     templateUrl: null,
-    dismissDelay: 5000,
-    icons: {
-      warning: 'exclamation-circle',
-      danger: 'remove-circle',
-      success: 'check-circle',
-      info: 'info-circle'
-    }
+    dismissDelay: 5000
   };
 
   /**
@@ -67,7 +61,6 @@
 
       $scope.dismiss = dismiss;
 
-      $scope.icons = config.icons;
       $scope.list = [];
     }
 
@@ -110,20 +103,6 @@
     /* Set default auto dismiss delay */
     if (ng.isNumber(cfg.dismissDelay)) {
       config.dismissDelay = parseInt(cfg.dismissDelay);
-    }
-
-    /* Set default auto dismiss delay */
-    if (ng.isNumber(cfg.dismissDelay)) {
-      config.dismissDelay = parseInt(cfg.dismissDelay);
-    }
-
-    /* Update icons */
-    if (ng.isObject(cfg.icons)) {
-      for (var key in config.icons) {
-        if (ng.isString(cfg.icons[key])) {
-          config.icons[key] = cfg.icons[key];
-        }
-      }
     }
   }
 
