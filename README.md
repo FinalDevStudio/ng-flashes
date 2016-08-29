@@ -16,6 +16,8 @@ And finally, add the `ngFlashes` module to your AngularJS application dependenci
 
 ## Usage
 
+### Directive
+
 Add an element with the `ng-flashes-container` attribute to your HTML:
 
 ```html
@@ -23,6 +25,36 @@ Add an element with the `ng-flashes-container` attribute to your HTML:
 ```
 
 Ideally, place this element after all other content so that the flash messages appear above anything else by default.
+
+### Service
+
+The `ngFlashes` service exposes various methods:
+
+Method | Arguments | Description
+---|---|---
+`show` | `type`:`String`, `title`:`String`, `message`:`String` | Shows a flash message of the defined type with the defined title and message.
+`success` | `title`:`String`, `message`:`String` | Shows a flash message of success type with the defined title and message.
+`warning` | `title`:`String`, `message`:`String` | Shows a flash message of warning type with the defined title and message.
+`danger` | `title`:`String`, `message`:`String` | Shows a flash message of danger type with the defined title and message.
+`info` | `title`:`String`, `message`:`String` | Shows a flash message of info type with the defined title and message.
+
+#### Example usage
+
+```js
+angular.module('MyApp').controller('MyController', [
+  '$socope', 'ngFlashes',
+
+  function ($scope, $flash) {
+    // ...
+
+    // Show method
+    $flash.show('custom', 'Heads up!', 'This alert needs your attention, but it\'s not super important.');
+
+    // Type method
+    $flash.warning('Warning!', 'Better check yourself, you\'re not looking too good.');
+  }
+]);
+```
 
 ## Configuration
 
@@ -84,8 +116,8 @@ In Pug (Jade):
       "fa-info-circle": flash.type === "info"\
     }')
 
-    strong(translate='{{ flash.title }}')
-    span(translate='{{ flash.message }}')
+    strong {{ flash.title }}
+    span {{ flash.message }}
 ```
 
 In HTML:
@@ -95,8 +127,8 @@ In HTML:
   <div ng-class="'alert-' + flash.type" ng-click="dismiss($index)" class="alert">
     <i ng-class="{ 'fa-exclamation-triangle': flash.type === 'danger', 'fa-exclamation-circle': flash.type === 'warning', 'fa-check-circle': flash.type === 'success', 'fa-info-circle': flash.type === 'info' }" class="fa"></i>
 
-    <strong translate="{{ flash.title }}"></strong>
-    <span translate="{{ flash.message }}"></span>
+    <strong>{{ flash.title }}</strong>
+    <span>{{ flash.message }}</span>
   </div>
 </div>
 ```
