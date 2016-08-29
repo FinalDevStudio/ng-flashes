@@ -8,13 +8,7 @@
   var EVENT_SHOW = "ngFlashes.show";
   var config = {
     templateUrl: null,
-    dismissDelay: 5e3,
-    icons: {
-      warning: "exclamation-circle",
-      danger: "remove-circle",
-      success: "check-circle",
-      info: "info-circle"
-    }
+    dismissDelay: 5e3
   };
   function ngFlashesContainerDirectiveFn($timeout) {
     function ngFlashesDirectiveLinkFn($scope) {
@@ -37,7 +31,6 @@
       }
       $scope.$on(EVENT_SHOW, onFlashShow);
       $scope.dismiss = dismiss;
-      $scope.icons = config.icons;
       $scope.list = [];
     }
     function ngflashesTemplateUrlFn($element, $attrs) {
@@ -60,16 +53,6 @@
     }
     if (ng.isNumber(cfg.dismissDelay)) {
       config.dismissDelay = parseInt(cfg.dismissDelay);
-    }
-    if (ng.isNumber(cfg.dismissDelay)) {
-      config.dismissDelay = parseInt(cfg.dismissDelay);
-    }
-    if (ng.isObject(cfg.icons)) {
-      for (var key in config.icons) {
-        if (ng.isString(cfg.icons[key])) {
-          config.icons[key] = cfg.icons[key];
-        }
-      }
     }
   }
   function ngFlashesServiceFn($rootScope) {
