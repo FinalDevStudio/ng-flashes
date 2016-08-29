@@ -1,0 +1,36 @@
+{
+  "title": "Angular Flash Messages",
+  "name": "ng-flashes",
+  "homepage": "https://github.com/FinalDevStudio/ng-flashes",
+  "description": "Flash messages module for AngularJS",
+  "authors": [
+    "Santiago G. Marín <santiago@finaldevstudio.com>"
+  ],
+  "main": [
+    "dist/ng-flashes.js"
+  ],
+  "keywords": [
+    "angular",
+    "flash",
+    "flashes",
+    "message",
+    "directive",
+    "service"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".eslintrc.json",
+    ".editorconfig",
+    "karma.conf.js",
+    ".eslintignore",
+    ".jsbeautifyrc",
+    "node_modules",
+    "package.json",
+    "gulpfile.js",
+    ".travis.yml",
+    ".gitignore",
+    "*.log",
+    "test",
+    "src"
+  ]
+}
