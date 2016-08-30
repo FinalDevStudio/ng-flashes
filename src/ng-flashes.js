@@ -164,7 +164,7 @@
 
   /* Define directive */
   .directive('ngFlashesContainer', [
-    '$timeout', '$session',
+    '$timeout',
 
     ngFlashesContainerDirectiveFn
   ]);

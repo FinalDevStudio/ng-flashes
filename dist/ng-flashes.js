@@ -79,5 +79,5 @@
     };
     return ngFlashesProviderDef;
   }
-  ng.module("ngFlashes", []).provider("ngFlashes", ngFlashesProviderFn).directive("ngFlashesContainer", [ "$timeout", "$session", ngFlashesContainerDirectiveFn ]);
+  ng.module("ngFlashes", []).provider("ngFlashes", ngFlashesProviderFn).directive("ngFlashesContainer", [ "$timeout", ngFlashesContainerDirectiveFn ]);
 })(window);
